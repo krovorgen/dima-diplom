@@ -2,7 +2,6 @@ import React, { FC, memo, useEffect } from 'react';
 
 import styles from './Modal.module.scss';
 import cn from 'classnames';
-import { log } from 'util';
 
 type Props = {
   onClose: () => void;
