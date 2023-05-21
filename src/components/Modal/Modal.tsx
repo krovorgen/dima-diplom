@@ -2,6 +2,7 @@ import React, { FC, memo, useEffect } from 'react';
 
 import styles from './Modal.module.scss';
 import cn from 'classnames';
+import { log } from 'util';
 
 type Props = {
   onClose: () => void;
@@ -23,10 +24,11 @@ export const Modal: FC<Props> = memo(({ onClose, wrapWithoutPadding, children })
     <div
       className={styles.root}
       onClick={(e) => {
+        console.log('1');
         e.stopPropagation();
         onClose();
       }}>
-      <div className={styles.inner}>
+      <div className={styles.inner} onClick={(e) => e.stopPropagation()}>
         <button className={styles.cross} type="button" onClick={onClose} title="Закрыть">
           <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -35,9 +37,7 @@ export const Modal: FC<Props> = memo(({ onClose, wrapWithoutPadding, children })
             />
           </svg>
         </button>
-        <div className={cn(styles.wrap, appearances)} onClick={(e) => e.stopPropagation()}>
-          {children}
-        </div>
+        <div className={cn(styles.wrap, appearances)}>{children}</div>
       </div>
     </div>
   );
