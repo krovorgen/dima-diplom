@@ -1,0 +1,70 @@
+@import "./src/scss/helpers/variables";
+@import "./src/scss/helpers/mixins";
+
+.label {
+  display: block;
+}
+
+.text {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+  color: #76767a;
+
+  span {
+    color: #ec1c24;
+  }
+}
+
+.input {
+  padding: 4px 10px;
+  min-height: 34px;
+  outline: none;
+  border: 1px solid #e4e4e4;
+  border-radius: 4px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1;
+  color: #181818;
+
+  &:focus,
+  &:active {
+    border-color: #267f8c;
+  }
+
+  &:disabled {
+    border-color: #e4e4e4 !important;
+    background-color: #f9f9f9 !important;
+    cursor: not-allowed;
+  }
+
+  &[type="number"] {
+    appearance: textfield;
+  }
+
+  &::placeholder {
+    font-style: italic;
+    color: #adadaf;
+  }
+
+  &Error {
+    border-color: #ff3d00 !important;
+    background-color: #ffece5 !important;
+  }
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    appearance: none;
+  }
+}
+
+.error {
+  display: inline-block;
+  margin-top: 8px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  color: #ff3d00;
+}

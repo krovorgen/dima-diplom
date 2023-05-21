@@ -1,0 +1,39 @@
+@import "./src/scss/helpers/variables";
+@import "./src/scss/helpers/mixins";
+
+.img {
+  width: 100%;
+  height: 200px;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+}
+
+.form {
+}
+
+.wrap {
+  padding: 20px 30px;
+}
+
+.title {
+  margin-bottom: 4px;
+  font-weight: 600;
+  font-size: 23px;
+  text-align: center;
+}
+
+.box {
+  > * {
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+  }
+}
+
+.textarea {
+}

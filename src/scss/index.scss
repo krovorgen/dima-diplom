@@ -1,0 +1,21 @@
+@import "core/fonts";
+@import "helpers/mixins";
+@import "helpers/variables";
+@import "core/reset";
+@import "core/global";
+@import "components/btn";
+@import "~react-toastify/dist/ReactToastify.min.css";
+
+body {
+  min-height: 100vh;
+  font-size: 16px;
+  background-color: #f4f4f4;
+}
+
+.container {
+  position: relative;
+  margin: 0 auto;
+  padding: 0 10px;
+  width: 100%;
+  max-width: 1348px;
+}

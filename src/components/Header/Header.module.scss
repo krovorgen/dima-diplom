@@ -1,0 +1,86 @@
+@import "./src/scss/helpers/variables";
+@import "./src/scss/helpers/mixins";
+
+.header {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  background-color: #fff;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @include media($md) {
+    flex-direction: column;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  margin-right: 12px;
+
+  @include media($md) {
+    margin-right: 0;
+    margin-bottom: 12px;
+  }
+}
+
+.img {
+  margin-right: 8px;
+
+  @include media($md) {
+    margin-right: 0;
+  }
+}
+
+.wrap {
+  @include media($md) {
+    display: none;
+  }
+}
+
+.title {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1;
+  color: #74d42b;
+}
+
+.subtitle {
+  display: block;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #000;
+}
+
+.nav {
+  display: flex;
+
+  @include media($md) {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  > * {
+    white-space: nowrap;
+
+    @include media($md) {
+      width: 100%;
+    }
+
+    &:not(:last-child) {
+      margin-right: 8px;
+
+      @include media($md) {
+        margin-right: 0;
+        margin-bottom: 8px;
+      }
+    }
+  }
+}

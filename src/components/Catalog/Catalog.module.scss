@@ -1,0 +1,109 @@
+@import "./src/scss/helpers/variables";
+@import "./src/scss/helpers/mixins";
+
+.root {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.title {
+  margin-bottom: 32px;
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 1.5;
+  color: #5a360e;
+
+  @include media($sm) {
+    margin-bottom: 16px;
+    font-size: 24px;
+  }
+}
+
+.items {
+  display: grid;
+  grid-gap: 16px 32px;
+  grid-template-columns: repeat(4, 1fr);
+
+  @include media($xl) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include media($lg) {
+    grid-gap: 8px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include media($sm) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.item {
+  width: 100%;
+  border: #dedede 1px solid;
+  border-radius: 8px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0 0 0;
+  background-color: #fff;
+  transition: box-shadow 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+  }
+}
+
+.img {
+  width: 100%;
+  height: 230px;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 230px;
+    border-radius: 8px 8px 0 0;
+    object-fit: cover;
+  }
+}
+
+.wrap {
+  padding: 16px;
+}
+
+.subtitle {
+  margin-bottom: 12px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.elements {
+  margin-bottom: 16px;
+}
+
+.element {
+  display: flex;
+  justify-content: space-between;
+
+  &:not(:last-child) {
+    margin-bottom: 4px;
+    padding-bottom: 4px;
+    border-bottom: #dedede 1px solid;
+  }
+}
+
+.text {
+  margin-right: 4px;
+  font-size: 14px;
+  color: #606060;
+}
+
+.descr {
+  font-weight: 700;
+
+  &Primary {
+    color: #419453;
+  }
+
+  &Accent {
+    color: #ff3b00;
+  }
+}
