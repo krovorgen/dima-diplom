@@ -15,6 +15,9 @@ instanceAuth.interceptors.request.use((config) => {
   return config;
 });
 export const api = {
+  getTrees() {
+    return instance.get(`/tree/`);
+  },
   checkLogin() {
     return instanceAuth.get(`/auth/me/`, {
       headers: {

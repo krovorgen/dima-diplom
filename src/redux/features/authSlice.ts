@@ -50,6 +50,7 @@ export const registrationUser = createAsyncThunk(
       toast.success('Благодарим Вас за регистрацию!');
       return res.data;
     } catch ({ response }) {
+      toast.error('НЕВЕРНЫЕ ДАННЫЕ ДЛЯ РЕГИСТРАЦИИ');
       catchHandler(response);
     }
   },
@@ -76,7 +77,9 @@ const slice = createSlice({
         }
       })
       .addCase(registrationUser.fulfilled, (state, action) => {
-        state.token = action.payload.token;
+        if (action.payload && action.payload.token) {
+          state.token = action.payload.token;
+        }
       });
   },
 });
