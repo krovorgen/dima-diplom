@@ -8,8 +8,10 @@ import { Button } from '../Button';
 import { RequestAll } from '../RequestСall';
 import { Login } from '../Login';
 import { Registration } from '../Registration';
+import { useAppSelector } from '../../redux/store';
 
 export const Header = () => {
+  const user = useAppSelector((state) => state.auth.user);
   const [showRequestModal, setShowRequestModal] = useState(false);
   const toggleShowRequestModal = useCallback(() => {
     setShowRequestModal((v) => !v);
@@ -21,6 +23,10 @@ export const Header = () => {
   const [showRegistrationModal, setShowRegistrationModal] = useState(false);
   const toggleShowRegistrationModal = useCallback(() => {
     setShowRegistrationModal((v) => !v);
+  }, []);
+  const exit = useCallback(() => {
+    localStorage.setItem('token', '');
+    window.location.reload();
   }, []);
   return (
     <>
@@ -34,17 +40,28 @@ export const Header = () => {
             </span>
           </a>
           <div className={styles.nav}>
-            <Button onClick={toggleShowLoginModal}>Логин</Button>
-            <Button onClick={toggleShowRegistrationModal}>Регистрация</Button>
+            {!user && (
+              <>
+                <Button onClick={toggleShowLoginModal}>Логин</Button>
+                <Button onClick={toggleShowRegistrationModal}>Регистрация</Button>
+              </>
+            )}
             <Button onClick={toggleShowRequestModal} variant="base-outline">
               Заказать звонок
             </Button>
+            {user && (
+              <Button onClick={exit} variant="base-outline">
+                Выйти из аккаунта
+              </Button>
+            )}
           </div>
         </div>
       </header>
       {showRequestModal && <RequestAll toggleShowModal={toggleShowRequestModal} />}
-      {showLoginModal && <Login toggleShowModal={toggleShowLoginModal} />}
-      {showRegistrationModal && <Registration toggleShowModal={toggleShowRegistrationModal} />}
+      {!user && showLoginModal && <Login toggleShowModal={toggleShowLoginModal} />}
+      {!user && showRegistrationModal && (
+        <Registration toggleShowModal={toggleShowRegistrationModal} />
+      )}
     </>
   );
 };

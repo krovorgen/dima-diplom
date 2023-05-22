@@ -63,7 +63,7 @@ export const Catalog = () => {
         <h2 className={styles.title}>Каталог и цены</h2>
         <ul className={styles.items}>
           {data.map((el) => (
-            <li className={styles.item} onClick={toggleShowModal}>
+            <li key={Math.random()} className={styles.item} onClick={toggleShowModal}>
               <div className={styles.img}>
                 <img src={el.img} alt={el.title} />
               </div>

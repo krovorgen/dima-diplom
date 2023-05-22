@@ -35,7 +35,7 @@ export const Button: FC<ButtonProps> = ({
     'btn--without-border': withoutBorder,
   };
   return (
-    <Component class={cn('btn', `btn--${size}`, `btn--${variant}`, appearances)} {...rest}>
+    <Component className={cn('btn', `btn--${size}`, `btn--${variant}`, appearances)} {...rest}>
       {children}
     </Component>
   );
