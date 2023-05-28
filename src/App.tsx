@@ -4,6 +4,11 @@ import { Catalog } from './components/Catalog';
 import { Contact } from './components/Contact';
 import { useAppDispatch, useAppSelector } from './redux/store';
 import { initializedApp } from './redux/features/authSlice';
+import { Route, Routes } from 'react-router-dom';
+import { Router } from './helpers/router';
+import { Footer } from './components/Footer';
+import { Cabinet } from './components/Cabinet';
+import { Orders } from './components/Orders';
 
 export const App = () => {
   const dispatch = useAppDispatch();
@@ -20,8 +25,19 @@ export const App = () => {
   return (
     <main>
       <Header />
-      <Catalog />
-      <Contact />
+      <Routes>
+        <Route
+          path={Router.home}
+          element={
+            <>
+              <Catalog />
+              <Contact />
+            </>
+          }></Route>
+        <Route path={Router.cabinet} element={<Cabinet />}></Route>
+        <Route path={Router.orders} element={<Orders />}></Route>
+      </Routes>
+      <Footer />
     </main>
   );
 };

@@ -9,6 +9,8 @@ import { RequestAll } from '../RequestСall';
 import { Login } from '../Login';
 import { Registration } from '../Registration';
 import { useAppSelector } from '../../redux/store';
+import { NavLink } from 'react-router-dom';
+import { Router } from '../../helpers/router';
 
 export const Header = () => {
   const user = useAppSelector((state) => state.auth.user);
@@ -32,13 +34,13 @@ export const Header = () => {
     <>
       <header className={styles.header}>
         <div className={cn('container', styles.container)}>
-          <a href="/" className={styles.logo}>
+          <NavLink to={Router.home} className={styles.logo}>
             <img className={styles.img} src={logo} width={88} height={88} alt="Logo" />
             <span className={styles.wrap}>
               <span className={styles.title}>ЁЛКИ-ИГОЛКИ</span>
               <span className={styles.subtitle}>садовый центр СПб</span>
             </span>
-          </a>
+          </NavLink>
           <div className={styles.nav}>
             {!user && (
               <>
@@ -50,9 +52,16 @@ export const Header = () => {
               Заказать звонок
             </Button>
             {user && (
-              <Button onClick={exit} variant="base-outline">
-                Выйти из аккаунта
-              </Button>
+              <>
+                <NavLink to={Router.cabinet}>
+                  <Button Component="span" variant="base-outline">
+                    Кабинет
+                  </Button>
+                </NavLink>
+                <Button onClick={exit} variant="base-outline">
+                  Выйти из аккаунта
+                </Button>
+              </>
             )}
           </div>
         </div>

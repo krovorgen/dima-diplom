@@ -1,0 +1,25 @@
+@import "./src/scss/helpers/variables";
+@import "./src/scss/helpers/mixins";
+
+.root {
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+.items {
+  margin-bottom: 64px;
+}
+
+.item {
+  font-size: 16px;
+  &:not(:last-child) {
+    margin-bottom: 16px;
+  }
+}
+
+.link {
+  font-size: 16px;
+  &:hover {
+    text-decoration-line: underline;
+  }
+}
