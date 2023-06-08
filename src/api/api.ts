@@ -2,10 +2,10 @@ import axios from 'axios';
 import { UserType } from '../redux/features/authSlice';
 
 const instance = axios.create({
-  baseURL: 'https://a17846-2881.a.d-f.pw',
+  baseURL: 'https://a18323-716d.g.d-f.pw',
 });
 const instanceAuth = axios.create({
-  baseURL: 'https://a17846-2881.a.d-f.pw',
+  baseURL: 'https://a18323-716d.g.d-f.pw',
   headers: {
     Authorization: `token ${localStorage.getItem('token')}`,
   },
