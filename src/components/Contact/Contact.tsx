@@ -9,9 +9,13 @@ export const Contact = () => {
         <h2 className={styles.title}>КАК СВЯЗАТЬСЯ С НАМИ</h2>
         <ul className={styles.items}>
           <li className={styles.item}>
-            <div className={styles.img}>
+            <a
+              className={styles.img}
+              href="https://yandex.ru/maps/-/CCU1iXe0xB"
+              target="_blank"
+              rel="noopener">
               <img src="https://xn---777-l4dkvbbpegf5b.xn--p1ai/img/icon__1.jpg" alt="" />
-            </div>
+            </a>
             <p className={styles.text}>СПб</p>
           </li>
           <li className={styles.item}>

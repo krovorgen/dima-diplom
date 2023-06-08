@@ -22,18 +22,14 @@
 .items {
   display: grid;
   grid-gap: 16px 32px;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 
   @include media($xl) {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
   @include media($lg) {
     grid-gap: 8px;
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @include media($sm) {
     grid-template-columns: repeat(1, 1fr);
   }
 }
@@ -57,7 +53,9 @@
 
   img {
     display: block;
-    width: 100%;
+    margin: 0 auto;
+    width: fit-content;
+    height: 230px;
     border-radius: 8px 8px 0 0;
   }
 }

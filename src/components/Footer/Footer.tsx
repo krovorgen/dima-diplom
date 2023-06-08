@@ -1,5 +1,9 @@
 import React from 'react';
 
+import telegram from './telegram.png';
+import gmail from './gmail.png';
+import telephone from './telephone.png';
+
 import styles from './Footer.module.scss';
 
 export const Footer = () => {
@@ -10,17 +14,17 @@ export const Footer = () => {
           <ul className={styles.items}>
             <li className={styles.item}>
               <a className={styles.link} href="tel:8971218988">
-                +77777777777
+                <img src={telegram} alt="telegram" /> +7 (925) 795-73-56
               </a>
             </li>
             <li className={styles.item}>
               <a className={styles.link} href="mailto:dima@gmail.com">
-                dima@gmail.com
+                <img src={gmail} alt="gmail" /> elki-igolki777@mail.ru
               </a>
             </li>
             <li className={styles.item}>
               <a className={styles.link} href="https://telegram.me/strawberrycoold">
-                @strawberrycoold
+                <img src={telephone} alt="telephone" /> @strawberrycoold
               </a>
             </li>
           </ul>

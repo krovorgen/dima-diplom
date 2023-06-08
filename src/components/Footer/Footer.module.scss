@@ -33,10 +33,19 @@
 }
 
 .link {
+  display: flex;
+  align-items: center;
   font-size: 16px;
   color: #fff;
 
   &:hover {
     text-decoration-line: underline;
+  }
+
+  img {
+    display: block;
+    margin-right: 16px;
+    width: 16px;
+    height: 16px;
   }
 }
